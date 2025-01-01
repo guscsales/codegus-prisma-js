@@ -2,7 +2,7 @@
 
 Code created for the Prisma ORM video. This is a simple (hardcoded) task management system using Prisma ORM.
 
-Video: https://youtu.be/lHdPA-CrGYk?si=5wVHjv0qOkeTzBjF
+Videos: https://www.youtube.com/watch?v=lHdPA-CrGYk&list=PLFRnIPKyoBHh0V6iWjKd3UwDpk5eyndAW
 
 ## Installation
 
@@ -28,7 +28,7 @@ DATABASE_URL="postgresql://your_user:your_password@localhost:5432/database_name"
 Run the command to create the database tables:
 
 ```bash
-pnpm prisma migrate deploy
+npx prisma migrate deploy
 ```
 
 ## Available Commands
