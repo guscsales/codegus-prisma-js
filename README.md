@@ -1,70 +1,83 @@
 # Codegus Tasks
 
-Código crido para o vídeo sobre Prisma ORM. Esse é um sistema simples (hardcoded) de gerenciamento de tarefas usando Prisma ORM.
+Code created for the Prisma ORM video. This is a simple (hardcoded) task management system using Prisma ORM.
 
-## Instalação
+Video: https://youtu.be/lHdPA-CrGYk?si=5wVHjv0qOkeTzBjF
+
+## Installation
 
 ```bash
-# Clone o repositório
+# Clone the repository
 git clone https://github.com/guscsales/codegus-prisma-js.git
 
-# Entre no diretório
+# Enter the directory
 cd codegus-prisma-js
 
-# Instale as dependências com pnpm
-pnpm install # (ou seu gerenciador de pacotes preferido)
+# Install dependencies with pnpm
+pnpm install # (or your preferred package manager)
 ```
 
-## Configuração
+## Configuration
 
-Crie um arquivo `.env` com a seguinte variável:
+Create a `.env` file with the following variable:
 
 ```env
-DATABASE_URL="postgresql://seu_usuario:sua_senha@localhost:5432/nome_do_banco"
+DATABASE_URL="postgresql://your_user:your_password@localhost:5432/database_name"
 ```
 
-Execute o comando para criar as tabelas no banco de dados:
+Run the command to create the database tables:
+
 ```bash
 pnpm prisma migrate deploy
 ```
 
-## Comandos Disponíveis
+## Available Commands
 
-### Criar uma Nova Tarefa
+### Create a New Task
+
 ```bash
 node create-task.js
 ```
-Este comando cria uma nova tarefa no banco de dados com:
-- Título
-- Descrição
-- Data de vencimento
 
-### Criar um Marco para uma Tarefa
+This command creates a new task in the database with:
+
+- Title
+- Description
+- Due date
+
+### Create a Task Milestone
+
 ```bash
 node create-task-milestone.js
 ```
-Este comando cria um marco (milestone) para uma tarefa específica.
-> ⚠️ Importante: Você precisa alterar o ID da tarefa no arquivo antes de executar
 
-### Listar Todas as Tarefas
+This command creates a milestone for a specific task.
+
+> ⚠️ Important: You need to change the task ID in the file before running
+
+### List All Tasks
+
 ```bash
 node list-tasks.js
 ```
-Este comando exibe todas as tarefas cadastradas:
-- Ordenadas por data de vencimento
-- Mostra título e ID de cada tarefa
-- Inclui os marcos associados a cada tarefa
 
-## Estrutura dos Arquivos
+This command displays all registered tasks:
 
-- `create-task.js`: Script para criar tarefas novas
-- `create-task-milestone.js`: Script para adicionar marcos às tarefas
-- `list-tasks.js`: Script para visualizar todas as tarefas cadastradas
-- `prisma/schema.prisma`: Define a estrutura do banco de dados
-- `package.json`: Configurações e dependências do projeto
+- Ordered by due date
+- Shows title and ID of each task
+- Includes milestones associated with each task
 
-## Banco de Dados
+## File Structure
 
-O projeto utiliza duas tabelas principais:
-- `Task`: Armazena as informações básicas das tarefas
-- `TaskMilestone`: Armazena os marcos de cada tarefa
+- `create-task.js`: Script to create new tasks
+- `create-task-milestone.js`: Script to add milestones to tasks
+- `list-tasks.js`: Script to view all registered tasks
+- `prisma/schema.prisma`: Defines the database structure
+- `package.json`: Project settings and dependencies
+
+## Database
+
+The project uses two main tables:
+
+- `Task`: Stores basic task information
+- `TaskMilestone`: Stores the milestones for each task
